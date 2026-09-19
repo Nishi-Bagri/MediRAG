@@ -1,0 +1,28 @@
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Raw PDF
+data/raw/*.pdf
+
+# Generated chunk data
+data/processed/chunks.json

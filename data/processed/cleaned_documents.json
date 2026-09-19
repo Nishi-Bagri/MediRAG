@@ -1,0 +1,401 @@
+[
+  {
+    "page_content": "Page 1\nMedical Health Knowledge Base\nEnriched PDF knowledge source for learning and building a Retrieval-Augmented Generation\n(RAG) chatbot\nPurpose: This document is intentionally rich in headings, paragraphs, FAQs, tables, terminology, examples,\nand repeated concepts so it can be used to practice PDF ingestion, parsing, chunking, embeddings, vector\nsearch, retrieval, metadata, prompting, and RAG evaluation.\nImportant: This is an educational synthetic knowledge base created for software/RAG practice. It is not\nmedical advice, a diagnostic reference, or a substitute for a qualified healthcare professional.\nSuggested project: Build a chatbot that answers questions only from retrieved passages in this document,\nclearly states when the document does not contain enough information, and encourages professional medical\ncare for urgent or personal medical decisions.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 0
+    }
+  },
+  {
+    "page_content": "Page 2\nDocument Map\n• 1. How to use this document for RAG\n• 2. Core health concepts and terminology\n• 3. Preventive health and lifestyle\n• 4. Common symptom categories\n• 5. Diabetes and metabolic health\n• 6. Cardiovascular health\n• 7. Respiratory health\n• 8. Digestive health\n• 9. Women's health\n• 10. Mental and sleep health\n• 11. Medication and safety concepts\n• 12. When to seek urgent care\n• 13. Frequently asked questions\n• 14. RAG test-question bank\n• 15. Metadata and chunking practice\nThe content is organized so that some answers require one passage, while others require combining\ninformation from multiple sections. This makes it useful for testing retrieval quality and top-k behavior.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 1
+    }
+  },
+  {
+    "page_content": "Page 3\n1. How to Use This Document for RAG\nA knowledge source for RAG is more useful when it contains enough variety to create meaningful retrieval\nproblems. This document includes short definitions, longer explanations, tables, FAQs, and related concepts\nexpressed in different wording. For example, a user may ask about “high blood sugar,” while a passage may\nuse the term “hyperglycemia.” A good embedding and retrieval system should recognize that these concepts\ncan be related.\nFor ingestion practice, extract text page by page and preserve metadata such as document name, page\nnumber, section heading, and chunk index. During chunking, experiment with fixed-size chunks,\nsentence-aware chunks, paragraph-aware chunks, and recursive splitting. Do not assume that one chunking\nstrategy is universally correct.\nFor retrieval practice, ask questions that use synonyms, paraphrases, broad concepts, and specific details.\nCompare the retrieved chunks with the expected evidence. Record whether the correct passage appears in\ntop-1, top-3, or top-5 results.\nFor generation practice, instruct the model to answer only from retrieved context. If the context is insufficient,\nthe chatbot should say that the available knowledge base does not contain enough information rather than\ninventing an answer.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 2
+    }
+  },
+  {
+    "page_content": "Page 4\n2. Core Health Concepts and Terminology\nHealth information uses specialized terminology. A RAG system benefits from a knowledge source that contains\nboth everyday language and technical terms. The following glossary is intentionally compact so individual\nentries can become independent chunks.\nTerm\nPlain-language meaning\nRelated terms\nSymptom\nA change or experience noticed by a person, such as fatigue,\ncough, pain, or nausea.\nComplaint, manifestation\nSign\nAn observable or measurable finding, such as elevated\ntemperature or blood pressure.\nClinical finding\nDiagnosis\nIdentification of a condition based on history, examination, and\nappropriate testing.\nAssessment\nRisk factor\nA characteristic or exposure associated with a higher chance\nof developing a condition.\nPredisposing factor\nScreening\nTesting people without symptoms to identify a condition or risk\nearly in selected populations.\nPreventive testing\nChronic condition\nA condition that persists over a long period and may require\nongoing management.\nLong-term condition\nAcute condition\nA condition that begins suddenly or develops over a relatively\nshort period.\nShort-term illness\nInflammation\nA biological response that can occur when tissues are injured,\ninfected, or otherwise stimulated.\nInflammatory response\nDehydration\nA state in which the body loses more fluid than it takes in.\nFluid deficit\nVital signs\nMeasurements commonly used to assess basic physiological\nstatus, such as temperature, pulse, breathing rate, and blood\npressure.\nPhysiological measurements\nHealth information should be interpreted in context. A single symptom usually does not establish a diagnosis.\nSimilar symptoms can occur with different conditions, and some serious conditions can initially produce mild or\nnonspecific symptoms.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 3
+    }
+  },
+  {
+    "page_content": "Page 5\n3. Preventive Health and Lifestyle\nPreventive health focuses on reducing avoidable risks, detecting selected conditions early, and maintaining\nbehaviors that support general health. Prevention recommendations vary according to age, personal history,\nfamily history, medications, pregnancy status, and other factors.\nNutrition is one part of preventive health. A balanced eating pattern generally emphasizes a variety of\nvegetables and fruits, whole grains or other high-fiber foods, appropriate protein sources, and suitable amounts\nof healthy fats. Limiting excessive added sugars, highly processed foods, and excess sodium can be useful for\nmany people, although individual needs differ.\nPhysical activity supports cardiovascular fitness, muscle function, metabolic health, and overall well-being. A\npractical activity plan should account for a person's current fitness level, injuries, medical conditions, and\npreferences. Gradual progression is generally more sustainable than sudden extreme increases in exercise.\nSleep is also relevant to health. Regular sleep timing, a comfortable sleep environment, and reducing\nstimulating activities close to bedtime can support healthy sleep habits. Persistent or severe sleep problems\nmay warrant professional evaluation.\nPreventive care can include vaccinations, age- and risk-appropriate screening, dental care, eye care, and\nroutine medical visits. The correct screening schedule is not identical for everyone.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 4
+    }
+  },
+  {
+    "page_content": "Page 6\n4. Common Symptom Categories\nSymptoms are signals rather than diagnoses. The same symptom may have many possible explanations. RAG\nanswers should therefore avoid converting a general symptom description into a definitive diagnosis.\nSymptom\nExamples of possible contexts\nRAG caution\nHeadache\nTension, migraine, dehydration, infection, medication\neffects, or other causes.\nDo not diagnose from headache\nalone; sudden severe headache\nneeds urgent assessment.\nCough\nViral illness, allergies, asthma, reflux, environmental\nirritation, or other causes.\nDuration, breathing difficulty, fever,\nand other symptoms matter.\nFatigue\nPoor sleep, stress, anemia, infection, medication effects,\nmetabolic conditions, and many other possibilities.\nPersistent fatigue has many causes\nand may need evaluation.\nAbdominal pain\nDigestive disorders, infection, urinary conditions,\ngynecological causes, and other causes.\nLocation, severity, timing, and\nassociated symptoms are\nimportant.\nDizziness\nDehydration, medication effects, inner-ear problems,\nblood pressure changes, and other causes.\nClarify whether the person means\nlightheadedness or spinning.\nShortness of breath\nRespiratory disease, cardiovascular problems, anxiety,\nanemia, and other causes.\nSevere or sudden breathing\ndifficulty can require urgent care.\nA useful RAG response to a symptom question can describe the general possibilities contained in the\nknowledge base, identify warning signs, and explain what additional information may matter. It should not\nclaim certainty about an individual user's condition.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 5
+    }
+  },
+  {
+    "page_content": "Page 7\n5. Diabetes and Metabolic Health\nDiabetes is a group of conditions involving elevated blood glucose over time. Different forms of diabetes have\ndifferent causes and management considerations. The body may have insufficient insulin production, reduced\nresponse to insulin, or a combination of factors depending on the type and individual circumstances.\nCommonly discussed symptoms of elevated blood glucose can include increased thirst, frequent urination,\nincreased hunger, fatigue, blurred vision, and unexplained changes in body weight. However, some people may\nhave few or no obvious symptoms, especially early in the disease process.\nDiagnosis of diabetes is based on established laboratory criteria rather than symptoms alone. Common tests\ninclude measures of blood glucose and glycated hemoglobin (HbA1c), with interpretation depending on the\nclinical context and applicable diagnostic standards.\nDiabetes management may include nutrition planning, physical activity, glucose monitoring when indicated,\nmedicines, and regular follow-up. The appropriate treatment depends on diabetes type, glucose patterns, other\nhealth factors, and clinician guidance.\nPossible long-term complications can involve blood vessels, nerves, kidneys, eyes, and other organs. Risk\nreduction commonly involves maintaining appropriate glucose control and addressing other cardiovascular and\nmetabolic risk factors.\nHypoglycemia refers to abnormally low blood glucose. Symptoms can include shakiness, sweating, hunger,\nweakness, confusion, or changes in behavior. Severe hypoglycemia can be an emergency and may require\nimmediate assistance.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 6
+    }
+  },
+  {
+    "page_content": "Page 8\nDiabetes: Key Concepts for Retrieval\nConcept\nKnowledge-base statement\nBlood glucose\nThe amount of glucose circulating in the blood; it is influenced by food intake, insulin, activity,\nillness, stress, and other factors.\nInsulin\nA hormone that helps regulate blood glucose and supports movement of glucose into many\ncells.\nHbA1c\nA laboratory measure reflecting average blood glucose exposure over a period of roughly the\npreceding few months.\nHyperglycemia\nA term for elevated blood glucose.\nHypoglycemia\nA term for low blood glucose; severity and treatment depend on the situation.\nLifestyle management\nMay include nutrition, physical activity, sleep, weight-related goals when appropriate, and\nother individualized measures.\nExample retrieval question: “What is the difference between hyperglycemia and hypoglycemia?” A good\nretriever should surface the glossary or diabetes section even if the question does not use the exact wording\nfound in the document.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 7
+    }
+  },
+  {
+    "page_content": "Page 9\n6. Cardiovascular Health\nThe cardiovascular system includes the heart and blood vessels. Cardiovascular health is influenced by factors\nsuch as blood pressure, blood lipids, tobacco exposure, diabetes, physical activity, diet, body composition, age,\nfamily history, and other medical factors.\nHigh blood pressure, also called hypertension, can occur without noticeable symptoms. This is one reason\nblood pressure measurement is important. Persistently elevated blood pressure can increase the risk of\ncardiovascular and kidney complications.\nCholesterol is a lipid involved in cell membranes and other biological functions. Blood lipid testing may include\nmeasures such as LDL cholesterol, HDL cholesterol, and triglycerides. Interpretation depends on overall\ncardiovascular risk rather than a single number in isolation.\nChest discomfort can have many causes. Some forms of chest pressure, especially when accompanied by\nshortness of breath, sweating, nausea, fainting, or discomfort spreading to the arm, shoulder, back, neck, or\njaw, can indicate a medical emergency.\nA heart-healthy lifestyle may include regular physical activity, a balanced dietary pattern, avoidance of tobacco,\nappropriate sleep, and management of blood pressure, cholesterol, and blood glucose when needed.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 8
+    }
+  },
+  {
+    "page_content": "Page 10\n7. Respiratory Health\nThe respiratory system includes the airways and lungs and is responsible for moving oxygen into the body and\nremoving carbon dioxide. Respiratory symptoms can result from infections, allergies, asthma, environmental\nexposures, chronic lung conditions, cardiovascular conditions, and other causes.\nAsthma is a condition characterized by variable airway narrowing and inflammation. Symptoms can include\nwheezing, coughing, chest tightness, and shortness of breath. Triggers vary and can include allergens,\nexercise, respiratory infections, smoke, and environmental irritants.\nA respiratory infection may produce cough, sore throat, congestion, fever, fatigue, or other symptoms. The\nexact cause cannot always be determined from symptoms alone. Hydration, rest, symptom monitoring, and\nappropriate professional advice may be relevant depending on the illness.\nWarning signs can include severe breathing difficulty, bluish or gray discoloration of lips or face, severe chest\npain, confusion, inability to stay awake, or rapidly worsening symptoms. These situations require urgent\nmedical attention.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 9
+    }
+  },
+  {
+    "page_content": "Page 11\n8. Digestive Health\nThe digestive system processes food and absorbs nutrients. Common digestive complaints include abdominal\ndiscomfort, nausea, vomiting, diarrhea, constipation, bloating, heartburn, and changes in appetite.\nAcid reflux occurs when stomach contents move upward into the esophagus. Symptoms may include heartburn\nor a sour taste. Symptoms that are frequent, severe, or associated with difficulty swallowing, bleeding,\nunexplained weight loss, or significant chest pain should be evaluated by a healthcare professional.\nConstipation can involve infrequent bowel movements, hard stools, straining, or a feeling of incomplete\nevacuation. Hydration, dietary fiber, physical activity, and medication review can be relevant, but persistent or\nsevere symptoms need appropriate evaluation.\nDiarrhea can cause fluid and electrolyte loss. Important considerations include duration, severity, ability to drink,\nblood in stool, fever, severe abdominal pain, and signs of dehydration.\nDigestive symptoms often overlap across conditions. A chatbot should therefore ask or acknowledge context\nsuch as duration, severity, associated symptoms, recent foods, medications, travel, and known conditions when\nthose details are relevant.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 10
+    }
+  },
+  {
+    "page_content": "Page 12\n9. Women's Health\nWomen's health includes reproductive health, menstrual health, pregnancy-related care, breast health, bone\nhealth, cardiovascular health, and many other areas. Individual recommendations depend strongly on age,\nreproductive status, symptoms, medications, and personal history.\nThe menstrual cycle varies between individuals and can also change over time. Changes in cycle length, flow,\npain, or missed periods can have many possible causes, including stress, changes in weight or activity,\nhormonal conditions, pregnancy, medications, and other medical conditions.\nPregnancy can alter which medicines, tests, foods, and activities are appropriate. A person who may be\npregnant should consult an appropriate healthcare professional before making medication changes or using\ntreatments that may not be suitable during pregnancy.\nPelvic pain, unusually heavy bleeding, bleeding after menopause, severe pain, fainting, or\npregnancy-associated pain or bleeding can require prompt medical evaluation depending on the\ncircumstances.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 11
+    }
+  },
+  {
+    "page_content": "Page 13\n10. Mental and Sleep Health\nMental well-being can influence sleep, concentration, appetite, energy, and daily functioning. Stress can\nproduce physical and emotional symptoms, but persistent or severe symptoms may have multiple causes and\nshould not automatically be attributed to stress.\nInsomnia refers to difficulty falling asleep, staying asleep, or obtaining restorative sleep despite an opportunity\nto sleep. Helpful sleep habits can include consistent sleep and wake times, a comfortable sleep environment,\nlimiting late-day stimulants when appropriate, and using a calming pre-sleep routine.\nPersistent low mood, severe anxiety, major changes in functioning, or thoughts of self-harm warrant\nprofessional support. Immediate danger or thoughts of acting on self-harm require urgent local emergency or\ncrisis assistance.\nA health chatbot should use supportive, nonjudgmental language and should not present itself as a replacement\nfor a clinician or crisis professional.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 12
+    }
+  },
+  {
+    "page_content": "Page 14\n11. Medication and Safety Concepts\nMedicines can be beneficial but can also cause side effects, interactions, allergic reactions, or problems when\nused incorrectly. The correct dose and schedule depend on the specific medicine, formulation, person,\nindication, kidney and liver function, other medicines, and other factors.\nA chatbot should not invent a dose or tell a person to start, stop, or change a prescription medicine based only\non a general question. It can explain general concepts from a trusted knowledge source and recommend\ndiscussing personal treatment decisions with a pharmacist or clinician.\nMedication reconciliation means reviewing all medicines a person uses, including prescriptions,\nover-the-counter products, vitamins, supplements, and sometimes topical or inhaled products. This can help\nidentify duplication, interactions, or confusion about schedules.\nAllergic reactions to medicines can range from mild rash to severe reactions involving breathing difficulty,\nfacial or throat swelling, fainting, or other serious symptoms. Severe allergic symptoms require urgent medical\nattention.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 13
+    }
+  },
+  {
+    "page_content": "Page 15\n12. When to Seek Urgent Care\nA safety-focused RAG chatbot should recognize that some questions require urgent human assessment rather\nthan a long informational answer. The exact emergency pathway depends on the user's location and\ncircumstances.\nPossible warning sign\nWhy it matters\nSevere or rapidly worsening breathing\ndifficulty\nMay indicate a serious respiratory or cardiovascular problem.\nSevere chest pressure or pain, especially\nwith sweating, fainting, or shortness of breath\nCan be associated with a medical emergency.\nSudden weakness, facial drooping, speech\ndifficulty, or major confusion\nCan indicate a neurological emergency.\nSevere bleeding or vomiting blood\nMay require immediate medical assessment.\nLoss of consciousness or inability to stay\nawake\nCan indicate a serious underlying problem.\nSevere allergic reaction with breathing\ndifficulty or swelling of the face/throat\nCan become life-threatening quickly.\nSevere abdominal pain with concerning\nassociated symptoms\nSome causes require urgent evaluation.\nImmediate risk of self-harm or harm to others\nRequires urgent local emergency or crisis support.\nFor a real deployed system, emergency guidance should be localized, reviewed by qualified professionals,\nand connected to verified local emergency resources rather than relying on a generic model response.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 14
+    }
+  },
+  {
+    "page_content": "Page 16\n13. Frequently Asked Questions\nWhat is blood pressure?\nBlood pressure is the force of circulating blood against blood vessel walls. It is commonly reported using systolic\nand diastolic measurements. A single reading does not always represent a person's usual blood pressure.\nWhat is a normal body temperature?\nBody temperature varies by person, measurement method, time of day, and other factors. Fever is generally\ndiscussed in relation to an elevated temperature, but the exact interpretation depends on context and the\nmeasurement method.\nWhy can someone feel tired?\nFatigue has many possible causes, including insufficient sleep, stress, infection, anemia, medication effects,\nmetabolic conditions, and other health problems. Persistent or unexplained fatigue may warrant evaluation.\nWhat does dehydration mean?\nDehydration occurs when fluid loss exceeds fluid intake. Thirst, dry mouth, reduced urination, dizziness,\nweakness, and dark urine can occur, although symptoms vary.\nDoes one symptom prove a disease?\nNo. Symptoms usually have multiple possible causes, and diagnosis generally requires context, history,\nexamination, and sometimes testing.\nWhat is an allergy?\nAn allergy is an immune response to a substance that is otherwise harmless to many people. Symptoms can\nrange from mild to severe.\nWhat is inflammation?\nInflammation is a biological response involving immune and tissue processes. It can occur with infection, injury,\nautoimmune processes, and other stimuli.\nWhat is a risk factor?\nA risk factor is a characteristic, behavior, exposure, or condition associated with a change in the likelihood of\ndeveloping a disease. A risk factor does not guarantee that a person will develop the disease.\nWhy does a RAG chatbot need sources?\nRetrieval supplies relevant source material to the language model. This can improve grounding and make it\npossible to inspect which passages support an answer, although retrieval alone does not guarantee\ncorrectness.\nWhat should a chatbot do when the answer is not in the document?\nIt should say that the available knowledge base does not contain enough information and avoid inventing facts.\nA production system can optionally direct the user to an appropriate professional or verified external source.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 15
+    }
+  },
+  {
+    "page_content": "Page 17\n14. RAG Test-Question Bank\nUse these questions after building your retrieval system. Do not immediately look at the answer section;\ninstead, inspect which chunks your retriever returns.\n1. What is the difference between a symptom and a sign?\n2. Why can fatigue have many possible causes?\n3. What are some commonly discussed symptoms of elevated blood glucose?\n4. What is HbA1c used for?\n5. What is the difference between hyperglycemia and hypoglycemia?\n6. Why can high blood pressure be difficult to notice?\n7. What factors can influence cardiovascular health?\n8. What respiratory symptoms can occur with asthma?\n9. What warning signs may require urgent attention for breathing problems?\n10. What factors can be relevant when evaluating digestive symptoms?\n11. Why can menstrual changes have multiple possible causes?\n12. Why should medication changes be discussed with a professional?\n13. What is medication reconciliation?\n14. What warning signs can require urgent medical attention?\n15. What should the chatbot do if the document does not contain an answer?\n16. Find information about a concept using a synonym rather than the exact term used in the document.\n17. Ask a question whose answer requires combining information from two different sections.\n18. Ask a question that should return a warning/callout rather than a disease explanation.\nAdvanced retrieval tests: Try “What are signs of low sugar?” instead of “What are symptoms of\nhypoglycemia?” Try “high sugar” instead of “hyperglycemia.” Try “breathing problem” instead of “respiratory\nsymptom.” These paraphrases help you evaluate semantic retrieval.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 16
+    }
+  },
+  {
+    "page_content": "Page 18\n15. Metadata and Chunking Practice\nFor each chunk, consider storing metadata similar to the following conceptual structure:\nMetadata field\nExample\ndocument_id\nmedical_health_knowledge_001\ndocument_name\nMedical Health Knowledge Base\npage\n5\nsection\nDiabetes and Metabolic Health\nchunk_id\ndiabetes_05_03\nsource_type\neducational_synthetic_pdf\ntopic\ndiabetes\nkeywords\nglucose, insulin, HbA1c, hyperglycemia\nChunking exercise: create chunks using at least three strategies and compare the results. Strategy A can use a\nfixed character size with overlap. Strategy B can split on paragraphs and then apply a maximum size. Strategy\nC can use sentence-aware or recursive splitting. For every strategy, inspect whether important ideas remain\ntogether and whether chunks contain enough context to answer questions.\nEmbedding exercise: embed every chunk and store the vector with its metadata. Then embed a user query and\nretrieve the most similar chunks. Record the similarity score, chunk ID, section, and text. This creates a\ntransparent bridge between the conceptual RAG diagram and your implementation.\nGeneration exercise: construct a prompt containing the user question and retrieved context. Tell the model to\nuse only the provided context, avoid unsupported medical claims, and say when the context is insufficient.\nEvaluation exercise: measure retrieval separately from generation. A response can sound fluent while still\nbeing poorly grounded. First ask: “Did the correct evidence appear in the retrieved chunks?” Then ask: “Did\nthe final answer accurately use that evidence?”",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 17
+    }
+  },
+  {
+    "page_content": "Page 19\nRAG Learning Cheat Sheet\nIngestion: Source → Load → Parse → Clean → Chunk → Embed → Store\nRetrieval: User Query → Embed Query → Search Vector Store → Retrieve Top-K Chunks\nAugmentation: Retrieved Context + User Question → Prompt\nGeneration: Prompt → LLM → Grounded Answer\nKey distinction: RAG is an application architecture/pattern. LangChain is a framework that can help\nimplement parts of that architecture.\nThis document is deliberately designed for RAG experimentation. It contains enough content to demonstrate\npage-wise extraction, chunk boundaries, overlap, embeddings, semantic search, metadata filtering, top-k\nretrieval, prompt construction, and evaluation.\nEnd of knowledge base.",
+    "metadata": {
+      "producer": "",
+      "creator": "",
+      "creationdate": "",
+      "source": "data/raw/medical_rag_knowledge_base.pdf",
+      "file_path": "data/raw/medical_rag_knowledge_base.pdf",
+      "total_pages": 19,
+      "format": "PDF 1.4",
+      "title": "",
+      "author": "",
+      "subject": "",
+      "keywords": "",
+      "moddate": "",
+      "trapped": "",
+      "modDate": "",
+      "creationDate": "",
+      "page": 18
+    }
+  }
+]
