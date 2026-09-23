@@ -26,3 +26,5 @@ data/raw/*.pdf
 
 # Generated chunk data
 data/processed/chunks.json
+
+.streamlit/
