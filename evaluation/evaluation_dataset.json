@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is HbA1c?",
+        "relevant_chunks": [
+            "page_8_chunk_1"
+        ]
+    },
+    {
+        "question": "What factors can influence blood glucose?",
+        "relevant_chunks": [
+            "page_8_chunk_1"
+        ]
+    },
+    {
+        "question": "What is the role of insulin?",
+        "relevant_chunks": [
+            "page_8_chunk_1"
+        ]
+    },
+    {
+        "question": "What are some commonly discussed symptoms of elevated blood glucose?",
+        "relevant_chunks": [
+            "page_7_chunk_3"
+        ]
+    },
+    {
+        "question": "What is the capital of France?",
+        "relevant_chunks": []
+    }
+]

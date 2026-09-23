@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is HbA1c?",
+        "expected_type": "supported"
+    },
+    {
+        "question": "What factors can influence blood glucose, and what is the role of insulin?",
+        "expected_type": "supported"
+    },
+    {
+        "question": "What are some commonly discussed symptoms of elevated blood glucose?",
+        "expected_type": "supported"
+    },
+    {
+        "question": "What is the exact HbA1c percentage that confirms diabetes?",
+        "expected_type": "unsupported"
+    },
+    {
+        "question": "What is the capital of France?",
+        "expected_type": "out_of_scope"
+    }
+]
