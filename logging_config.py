@@ -1,0 +1,43 @@
+import logging
+from pathlib import Path
+
+
+# ============================================================
+# LOG DIRECTORY
+# ============================================================
+
+LOG_DIR = Path("logs")
+LOG_DIR.mkdir(exist_ok=True)
+
+LOG_FILE = LOG_DIR / "medirag.log"
+
+
+# ============================================================
+# LOGGING CONFIGURATION
+# ============================================================
+
+def setup_logging():
+
+    logging.basicConfig(
+        level=logging.INFO,
+
+        format=(
+            "%(asctime)s | "
+            "%(levelname)s | "
+            "%(name)s | "
+            "%(message)s"
+        ),
+
+        handlers=[
+            logging.FileHandler(
+                LOG_FILE,
+                encoding="utf-8"
+            ),
+            logging.StreamHandler()
+        ]
+    )
+
+    # Reduce noisy third-party HTTP logs
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
+    logging.getLogger("huggingface_hub").setLevel(logging.WARNING)

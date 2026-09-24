@@ -28,3 +28,6 @@ data/raw/*.pdf
 data/processed/chunks.json
 
 .streamlit/
+
+# Local SQLite database
+data/*.db

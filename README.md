@@ -56,8 +56,8 @@ MediRAG/
 ├── vectorstore/          # FAISS index
 ├── retrieval/            # semantic retriever
 ├── evaluation/            # recall, MRR, precision, generation, hallucination tests
-├── rag_pipeline.py        # end-to-end pipeline
-└── test_rag_pipeline.py
+├── .py        # end-to-end pipeline
+└── test_.py
 ```
 
 ## Getting Started
@@ -67,7 +67,7 @@ MediRAG/
 .\venv\Scripts\Activate.ps1
 
 # Run the full pipeline
-python test_rag_pipeline.py
+python test_.py
 ```
 
 ### Evaluation

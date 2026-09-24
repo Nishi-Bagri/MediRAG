@@ -1,5 +1,4 @@
-from retriever import load_model, load_vectorstore, retrieve
-
+from retrieval.retriever import load_model, load_vectorstore, retrieve
 
 print("===== OUT-OF-SCOPE RETRIEVAL TEST =====")
 
