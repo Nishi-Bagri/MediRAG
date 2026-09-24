@@ -256,28 +256,28 @@ with st.sidebar:
 
     with st.expander("⚙️ System Architecture"):
 
-    st.markdown(
-        """
-        **MediRAG Pipeline**
+        st.markdown(
+            """
+            **MediRAG Pipeline**
 
-        PDF<br>
-        ↓<br>
-        Ingestion<br>
-        ↓<br>
-        Cleaning<br>
-        ↓<br>
-        Chunking<br>
-        ↓<br>
-        Embeddings<br>
-        ↓<br>
-        FAISS Vector Database<br>
-        ↓<br>
-        Retrieval<br>
-        ↓<br>
-        LLM Generation
-        """,
-        unsafe_allow_html=True
-    )
+            PDF<br>
+            ↓<br>
+            Ingestion<br>
+            ↓<br>
+            Cleaning<br>
+            ↓<br>
+            Chunking<br>
+            ↓<br>
+            Embeddings<br>
+            ↓<br>
+            FAISS Vector Database<br>
+            ↓<br>
+            Retrieval<br>
+            ↓<br>
+            LLM Generation
+            """,
+            unsafe_allow_html=True
+        )
 
 
     st.divider()
