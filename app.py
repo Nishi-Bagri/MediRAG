@@ -2,6 +2,20 @@ import streamlit as st
 
 from rag_pipeline import rag_pipeline
 
+from upload_processor import process_uploaded_pdf
+from upload_embeddings import embed_uploaded_chunks
+from upload_vectorstore import create_upload_vectorstore
+
+from retrieval.retriever import load_model, retrieve
+
+from generation.generator import (
+    create_client,
+    build_context,
+    build_prompt,
+    generate_answer
+)
+
+
 from database import (
     initialize_database,
     create_conversation,
@@ -95,7 +109,14 @@ if "messages" not in st.session_state:
 if "conversation_id" not in st.session_state:
     st.session_state.conversation_id = None
 
+if "uploaded_file_name" not in st.session_state:
+    st.session_state.uploaded_file_name = None
 
+if "uploaded_index" not in st.session_state:
+    st.session_state.uploaded_index = None
+
+if "uploaded_mapping" not in st.session_state:
+    st.session_state.uploaded_mapping = None
 # ============================================================
 # HELPER FUNCTIONS
 # ============================================================
@@ -128,6 +149,71 @@ def ensure_conversation(title):
         )
 
 
+def run_uploaded_rag(query):
+
+    model = load_model()
+
+    results = retrieve(
+        query=query,
+        model=model,
+        index=st.session_state.uploaded_index,
+        mapping=st.session_state.uploaded_mapping,
+        top_k=5,
+        max_distance=1.5
+    )
+
+    if not results:
+
+        return {
+            "answer": (
+                "The uploaded document does not contain "
+                "enough relevant information to answer "
+                "this question."
+            ),
+            "sources": []
+        }
+
+    context = build_context(
+        results
+    )
+
+    prompt = build_prompt(
+        context,
+        query
+    )
+
+    client = create_client()
+
+    answer = generate_answer(
+        client,
+        prompt
+    )
+
+    sources = []
+
+    for result in results:
+
+        metadata = result.get(
+            "metadata",
+            {}
+        )
+
+        sources.append(
+            {
+                "rank": result["rank"],
+                "chunk_id": result["chunk_id"],
+                "page": metadata.get(
+                    "page",
+                    "Unknown"
+                ),
+                "distance": result["distance"]
+            }
+        )
+
+    return {
+        "answer": answer,
+        "sources": sources
+    }
 # ============================================================
 # SIDEBAR
 # ============================================================
@@ -161,6 +247,68 @@ with st.sidebar:
 
         st.rerun()
 
+
+    # UPLOAD DOCUMENT
+   
+    uploaded_file = st.file_uploader(
+        "📄 Upload a PDF",
+        type = ["pdf"],
+        help = "Upload a PDF to use as a knowledge source."
+    )
+
+    if uploaded_file is not None:
+        st.success(f"Uploaded: {uploaded_file.name}")
+
+        #Process only when a new file is uploaded
+        if(
+            st.session_state.uploaded_file_name != uploaded_file.name
+            ):
+
+            with st.spinner(
+                "Processing uploaded PDF"
+            ):
+                
+                pdf_bytes = uploaded_file.getvalue()
+
+                #PDF -> chunks
+                chunks = process_uploaded_pdf(
+                    pdf_bytes,
+                    uploaded_file.name
+                )
+
+                #Chunks -> embeddings
+                embedded_chunks = embed_uploaded_chunks(
+                    chunks
+                )
+
+                #Embeddings -> temporary FAISS
+                index, mapping = create_upload_vectorstore(
+                    embedded_chunks
+                )
+
+                #Save in current Streamlit session
+                st.session_state.uploaded_file_name = (
+                    uploaded_file.name
+                )
+
+                st.session_state.uploaded_index = index
+
+                st.session_state.uploaded_mapping = mapping
+
+                st.success(
+                    f"PDF processed successfully:"
+                    f"{len(chunks)} chunks"
+                )
+
+            st.success(
+                f"PDF processed successfully:"
+                f"{len(chunks)} chunks"
+            )
+
+        st.info(
+            "📄 Uploaded PDF is currently being used"
+            "as the knowledge source."
+        )
 
     # --------------------------------------------------------
     # CONVERSATION HISTORY
@@ -407,11 +555,19 @@ if "pending_question" in st.session_state:
 
         try:
 
-            result = rag_pipeline(
-                pending_question,
-                return_sources=True
-            )
+            if st.session_state.uploaded_index is not None:
+                
+                result = run_uploaded_rag(
+                    pending_question
+                )
 
+            else:
+
+                 result = rag_pipeline(
+                    pending_question,
+                    return_sources=True
+                )
+                 
             answer = result["answer"]
 
             sources = result.get(
