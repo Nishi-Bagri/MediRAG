@@ -563,6 +563,7 @@ if "pending_question" in st.session_state:
 
             else:
 
+
                  result = rag_pipeline(
                     pending_question,
                     return_sources=True
@@ -711,11 +712,18 @@ if query:
 
             try:
 
-                result = rag_pipeline(
-                    query,
-                    return_sources=True
-                )
+                if st.session_state.uploaded_index is not None:
 
+                    result = run_uploaded_rag(
+                        query
+                    )
+
+                else:
+
+                    result = rag_pipeline(
+                        query,
+                        return_sources=True
+                    )
 
                 answer = result["answer"]
 
