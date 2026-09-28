@@ -572,7 +572,7 @@ with st.sidebar:
                         f"{len(chunks)} chunks"
                     )
 
-                    st.reurn()
+                    st.rerun()
 
                 except Exception as e:
 
