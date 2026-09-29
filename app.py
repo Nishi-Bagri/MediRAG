@@ -816,46 +816,48 @@ st.markdown(
 # DISPLAY CHAT HISTORY
 # ============================================================
 
-for message in st.session_state.messages:
+chat_container = st.container(
+    height=600,
+    border=False
+)
 
-    with st.chat_message(message["role"]):
+with chat_container:
 
-        st.markdown(
-            message["content"]
-        )
+    for message in st.session_state.messages:
 
+        with st.chat_message(message["role"]):
 
-        sources = message.get(
-            "sources",
-            []
-        )
+            st.markdown(
+                message["content"]
+            )
 
+            sources = message.get(
+                "sources",
+                []
+            )
 
-        if (
-            message["role"] == "assistant"
-            and sources
-        ):
+            if (
+                message["role"] == "assistant"
+                and sources
+            ):
 
-            with st.expander("📚 Sources"):
+                with st.expander("📚 Sources"):
 
-                for source in sources:
+                    for source in sources:
 
-                    page = source.get(
-                        "page",
-                        "Unknown"
-                    )
+                        page = source.get(
+                            "page",
+                            "Unknown"
+                        )
 
+                        chunk_id = source.get(
+                            "chunk_id",
+                            "Unknown"
+                        )
 
-                    chunk_id = source.get(
-                        "chunk_id",
-                        "Unknown"
-                    )
-
-
-                    st.markdown(
-                        f"- Page {page} · `{chunk_id}`"
-                    )
-
+                        st.markdown(
+                            f"- Page {page} · `{chunk_id}`"
+                        )
 
 # ============================================================
 # CHAT INPUT
