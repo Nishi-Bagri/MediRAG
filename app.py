@@ -817,7 +817,7 @@ st.markdown(
 # ============================================================
 
 chat_container = st.container(
-    height=600,
+    height="content",
     border=False
 )
 
